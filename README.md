@@ -76,5 +76,5 @@ Cada equipo explicará al resto de la clase lo aprendido durante la realización
 
 * Los miembros del equipo más votado ganarán un premio.
 
-:star: Si te ha gustado este ejercicio, dale una estrellita al (repositorio original)[https://github.com/LuisJoseSanchez/aprende-un-lenguaje-en-un-dia].
+:star: Si te ha gustado este ejercicio, dale una estrellita al [repositorio original](https://github.com/LuisJoseSanchez/aprende-un-lenguaje-en-un-dia).
 
