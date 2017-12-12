@@ -11,8 +11,8 @@ Con este ejercicio se pretende despertar el interés por otros lenguajes de prog
 Sigue los pasos que se indican a continuación.
 
 ## Creación del equipo
-
-Este ejercicio se debe hacer en grupos de 3 alumnos. Uno de ellos será el representante del grupo.
+Grupo de tres alumnos:
+  EasyCodeEasyLife
 
 ## Forkea forkea
 
@@ -28,9 +28,9 @@ Para añadir colaboradores hay que hacer click en la pestaña *Settings* y selec
 
 Escribe aquí los miembros del grupo. El primero es el representante o encargado.
 
-* Alan Brito
-* Elba Lazo
-* Esteban Quito
+* Juan David Villena Gil -Lider-
+* Alejandro Caralt Caralt 
+* Jesus Vargas Galan 
 
 ## Lenguaje de programación
 
@@ -40,7 +40,7 @@ Escribe el lenguaje de programación elegido por el grupo.
 
 * Mi lenguaje
 
-Los papelitos se han recortado de este [documento](lenguajes_de_programacion.pdf).
+AWK
 
 ## Información sobre el lenguaje
 
