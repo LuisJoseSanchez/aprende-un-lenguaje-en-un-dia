@@ -44,7 +44,8 @@ AWK
 
 ## Información sobre el lenguaje
 
-Busca páginas y/o manuales sobre el lenguaje de programación elegido. Escribe aquí las principales características: cuándo y para qué se creó, en qué ámbito se utiliza, cuáles son sus principales ventajas, etc. Pon aquí enlaces y capturas de pantalla.
+AWK es un lenguaje de programación diseñado para procesar datos basados en texto, ya sean ficheros o flujos de datos. El nombre de AWK deriva de las iniciales de los apellidos de sus autores : Alfred Aho, Peter Weinberger y Brian Kernighan.
+Es un ejemplo de un lenguaje de programación que usa ampliamente el tipo de datos de listas asociativas y expresiones regulares.Fue una de las primeras herramientas en aparecer en Unix y ganó popularidad como una manera de añadir funcionalidad a las tuberías de UNIX, aunque se puede instalar implementaciones de AWK en casi todos los demás sistemas operativos.
 
 ## Herramientas de desarrollo
 
