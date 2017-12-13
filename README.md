@@ -67,6 +67,12 @@ Dada una altura introducida por el usuario, realiza un programa que pinte una pi
 ### 3. Arrays y números aleatorios
 
 Realiza un programa que rellene un array (o una estructura similar) con 20 números enteros aleatorios entre 1 y 100 y que seguidamente los muestre por pantalla. A continuación, se deben pasar los números primos a las primeras posiciones del array y los no primos a las posiciones restantes. Muestra finalmente el array resultado.
+$ awk BEGIN {
+   for (i = 0;i<20;i++)
+		alumno[i]=”$RANDOM”;
+    }
+		print alumno[3] “\n” alumno[2]; exit
+	
 
 ## Presentación de resultados
 
