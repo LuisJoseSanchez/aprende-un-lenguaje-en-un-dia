@@ -45,11 +45,12 @@ AWK
 ## Información sobre el lenguaje
 
 AWK es un lenguaje de programación diseñado para procesar datos basados en texto, ya sean ficheros o flujos de datos. El nombre de AWK deriva de las iniciales de los apellidos de sus autores : Alfred Aho, Peter Weinberger y Brian Kernighan.
-Es un ejemplo de un lenguaje de programación que usa ampliamente el tipo de datos de listas asociativas y expresiones regulares.Fue una de las primeras herramientas en aparecer en Unix y ganó popularidad como una manera de añadir funcionalidad a las tuberías de UNIX, aunque se puede instalar implementaciones de AWK en casi todos los demás sistemas operativos.
-
+Es un ejemplo de un lenguaje de programación que usa ampliamente el tipo de datos de listas asociativas y expresiones regulares. Fue una de las primeras herramientas en aparecer en Unix y ganó popularidad como una manera de añadir funcionalidad a las tuberías de UNIX, aunque se puede instalar implementaciones de AWK en casi todos los demás sistemas operativos.
+Se creó en 1977 y se actualizó hasta el año 1985. Que cada una de estas actualizaciones crearon dos dialectos el old awk y el awk nawk.Este lenguaje de programación es dinámico, su código es bastante corto, normalmente este lenguaje se usa para escribir programas de una linea (sencillos).
+Para editar el código de AWK necesitamos una herramienta simple y básica de UNIX que se llama VI.
 ## Herramientas de desarrollo
 
-Indica aquí qué software has tenido que instalar para programar en este lenguaje. Añade enlaces y/o capturas de pantalla.
+Para usar este lenguaje de programación nesitas el editor de texto VI.
 
 ## Poniendo en práctica el lenguaje
 
@@ -57,7 +58,7 @@ Pon en práctica el lenguaje de programación realizando los siguientes ejercici
 
 ### 1. ¡Hola mundo!
 
-Realiza un programa que muestre por pantalla la frase **¡Hola mundo!**.
+BEGIN { print "Hola mundo!"; exit }
 
 ### 2. Pirámide
 
@@ -69,7 +70,8 @@ Realiza un programa que rellene un array (o una estructura similar) con 20 núme
 
 ## Presentación de resultados
 
-Cada equipo explicará al resto de la clase lo aprendido durante la realización del ejercicio. Todos los miembros de cada equipo deben participar en la explicación. Se puede utilizar como material de base para la presentación el repositorio de GitHub.
+En este trabajo hemos aprendido los conceptos básicos de la programación con AWK que es un lenguaje muy antiguo el cual se usa para el tratado de texto (filtro de texto), Haciendo una comparación con java vemos que hay alguna similitud en la estructura pero solo con el dialecto más reciente.
+El tutorial que hemos seguido para aprender un concepto básico de AWK ha sido mediante videos de youtube y de una pagina que viene con muchos ejemplos y gran temario cuya dirección es: ftp://ftp.gnu.org/old-gnu/Manuals/gawk-3.0.3/html_chapter/gawk_toc.html
 
 ## Recompensa
 
