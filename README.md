@@ -48,9 +48,13 @@ AWK es un lenguaje de programación diseñado para procesar datos basados en tex
 Es un ejemplo de un lenguaje de programación que usa ampliamente el tipo de datos de listas asociativas y expresiones regulares. Fue una de las primeras herramientas en aparecer en Unix y ganó popularidad como una manera de añadir funcionalidad a las tuberías de UNIX, aunque se puede instalar implementaciones de AWK en casi todos los demás sistemas operativos.
 Se creó en 1977 y se actualizó hasta el año 1985. Que cada una de estas actualizaciones crearon dos dialectos el old awk y el awk nawk.Este lenguaje de programación es dinámico, su código es bastante corto, normalmente este lenguaje se usa para escribir programas de una linea (sencillos).
 Para editar el código de AWK necesitamos una herramienta simple y básica de UNIX que se llama VI.
+Ciertamente, puede no ser tan potente como numerosas herramientas que se pueden usar con la misma finalidad. Pero tiene la enorme ventaja de que, en un tiempo realmente corto, permite escribir programas que, aunque tal vez sean de un solo uso, están totalmente adaptados a nuestras necesidades, que en muchas ocasiones son sumamente sencillas.
+Awk es ideal para los propósitos con los que se diseño: leer ficheros línea por línea y procesar en base a los patterns y cadenas que encuentre en ellas.
+Ficheros del sistema como el /etc/password y muchos otros, resultan sumamente fáciles de tratar mediante el awk, sin recurrir a nada más.
+Y desde luego que awk no es el mejor. Hay varios lenguajes de scripting con capacidades mucho mayores. Pero awk sigue teniendo la ventaja de ser siempre accesible en cualquier instalación, por mínima que esta sea.
 ## Herramientas de desarrollo
 
-Para usar este lenguaje de programación nesitas el editor de texto VI.
+Para usar este lenguaje de programación nesitas el editor de texto VI, Sublime, NANO.
 
 ## Poniendo en práctica el lenguaje
 
@@ -69,7 +73,8 @@ Dada una altura introducida por el usuario, realiza un programa que pinte una pi
 Realiza un programa que rellene un array (o una estructura similar) con 20 números enteros aleatorios entre 1 y 100 y que seguidamente los muestre por pantalla. A continuación, se deben pasar los números primos a las primeras posiciones del array y los no primos a las posiciones restantes. Muestra finalmente el array resultado.
 $ awk BEGIN {
    for (i = 0;i<20;i++)
-		alumno[i]=”$RANDOM”;
+		alumno[i]=(rand()*100 +1);
+		if (factor {alumno[i]} | awk 'NF==2{print $2}')
     }
 		print alumno[3] “\n” alumno[2]; exit
 	
