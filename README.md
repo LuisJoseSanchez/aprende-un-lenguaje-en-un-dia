@@ -195,8 +195,10 @@ BEGIN {
 	exit
 }
 ```
-![](../Ejercicios-programacion/Array1.png)
-![](../Ejercicios-programacion/Array2.png)
+![](Piramide1.png)
+![](Piramide2.png)
+![](Piramide3.png)
+
 
 ### 3. Arrays y números aleatorios
 
@@ -244,9 +246,8 @@ print "\033[0;30;37m \n"
 exit
 }
 ```
-![](../Ejercicios-programacion/Piramide1.png)
-![](../Ejercicios-programacion/Piramide2.png)
-![](../Ejercicios-programacion/Piramide3.png)
+![](Array1.png)
+![](Array2.png)
 
 ## Presentación de resultados
 
