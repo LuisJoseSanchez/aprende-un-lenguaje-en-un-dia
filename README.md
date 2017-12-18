@@ -69,10 +69,180 @@ BEGIN { print "Hola mundo!"; exit }
 ### 2. Pirámide
 
 Dada una altura introducida por el usuario, realiza un programa que pinte una pirámide a base de asteriscos con la altura indicada.
+```awk
+#!/usr/bin/awk -f
+# Practicando AWK
+BEGIN {
+	print "La piramide se construira con distintas piedras dependiendo de su altura(<10='*' ;11-20='🂠'; >21='🀱')"
+	print "Introduce la altura de la piramide: "
+}
+{
+	ORS=" "
+	altura=$0 
+	base=1
+	espacios=(altura -1)
+	cielo = (altura/10)
+	if ( cielo <= 1){simbolo_piramide="*"}
+	else if(cielo <=2 ){ simbolo_piramide="🂠"}
+	else{simbolo_piramide="🀱"}
+}
+{
+	#Dibujo de Fondo
+	c_fondo="\033[1;44;30m"
+	c_piramide="\033[1;43;33m"
+	c_tierra="\033[0;43;33m"
+	c_blanco="\033[1;44;37m"	
+
+	print c_fondo
+	print c_blanco"☁☁☁☁" 
+	print c_fondo"   "
+	print c_blanco"--✈" 
+	print c_fondo"    " 
+	print c_blanco"☁☁☁☁☁" 
+	print c_fondo"      "
+	print "\033[1;44;33m☀" 
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_fondo"    "
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"    \n"
+
+	print c_blanco"☁☁☁☁☁☁"
+	print c_fondo"     "
+	print c_blanco"☁☁☁☁"
+	print c_fondo"  "
+	print c_blanco"☁☁☁" 
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_blanco"♈" 
+		print c_fondo"    " 
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"          \n"
+
+	print c_blanco"☁☁☁☁"
+	print c_fondo"     " 
+	print c_blanco"♈" 
+	print c_fondo"    " 
+	print c_blanco"☁☁☁☁" 
+	print c_fondo"   "
+	print c_blanco"☁☁"
+	print c_fondo"  "
+	print c_blanco"☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁"
+	print c_fondo"    "
+	print c_blanco"♈"
+	print c_fondo"          "
+	print c_blanco"☁☁☁☁☁☁☁☁☁"
+	}
+	print c_fondo"  \n"
+
+	print c_blanco"☁☁"
+	print c_fondo"    "
+	print c_blanco"♈"
+	print c_fondo"          "
+	print c_blanco"☁☁☁☁☁☁☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_blanco"♈" 
+		print c_fondo"    " 
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"    \n"
+
+	print "        "
+	print c_blanco"♈"
+	print c_fondo"           "
+	print c_blanco"☁☁☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print "        "
+		print c_blanco"♈"
+		print c_fondo"           "
+		print c_blanco"☁☁☁☁☁"
+	}
+	print c_fondo"     \n"
+}
+{
+	#Piramide
+	for (i = 0; i < altura; i++){
+		for (u = 0; u <= espacios; u++){
+		print c_fondo" "
+		}
+		for (relleno = 1; relleno <= base; relleno++){
+		print c_piramide simbolo_piramide
+		}
+		print c_fondo"\n"
+		base+=2
+		espacios-=1
+	}
+	exit
+}
+```
+
 
 ### 3. Arrays y números aleatorios
 
 Realiza un programa que rellene un array (o una estructura similar) con 20 números enteros aleatorios entre 1 y 100 y que seguidamente los muestre por pantalla. A continuación, se deben pasar los números primos a las primeras posiciones del array y los no primos a las posiciones restantes. Muestra finalmente el array resultado.
+```awk
+BEGIN{
+	ORS = " "
+	array_original[20]
+	array_primos[20]
+	array_noprimos[20]
+	contador_primos = 1
+	contador_noprimos = 1
+	primo = 0
+	c_piramide="\033[1;43;37m"
+	c_blanco="\033[1;44;37m"
+	c_color="\033[1;40;37m"
+
+	print "Array Original:   "
+	for(i = 1; i < 20; i++){
+		array_original[i] = int(rand() * 100 + 1)
+		printf c_color"%4d",array_original[i]
+		for(u = 2; u < array_original[i]; u++){
+			if((array_original[i] % u) == 0){
+				primo = 1
+			}
+		}
+		if(primo == 0){
+			array_primos[contador_primos] = array_original[i]
+			contador_primos++
+		}
+		if(primo == 1){
+			array_noprimos[contador_noprimos] = array_original[i]
+			contador_noprimos++
+		}
+	primo = 0
+	}
+	print "\033[0;30;37m \nArray Modificado: "
+	for(i = 1; i < contador_primos; i++){
+		printf c_piramide"%4d",array_primos[i]
+	}
+	for(i = 1; i < contador_noprimos; i++){
+		printf c_blanco"%4d",array_noprimos[i]
+	}
+print "\033[0;30;37m \n"
+exit
+}
+```
 	
 
 ## Presentación de resultados
