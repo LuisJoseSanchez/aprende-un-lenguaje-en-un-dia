@@ -11,8 +11,8 @@ Con este ejercicio se pretende despertar el interés por otros lenguajes de prog
 Sigue los pasos que se indican a continuación.
 
 ## Creación del equipo
-
-Este ejercicio se debe hacer en grupos de 3 alumnos. Uno de ellos será el representante del grupo.
+Grupo de tres alumnos:
+  EasyCodeEasyLife
 
 ## Forkea forkea
 
@@ -28,9 +28,9 @@ Para añadir colaboradores hay que hacer click en la pestaña *Settings* y selec
 
 Escribe aquí los miembros del grupo. El primero es el representante o encargado.
 
-* Alan Brito
-* Elba Lazo
-* Esteban Quito
+* Juan David Villena Gil -Lider-
+* Alejandro Caralt Caralt 
+* Jesus Vargas Galan 
 
 ## Lenguaje de programación
 
@@ -40,15 +40,21 @@ Escribe el lenguaje de programación elegido por el grupo.
 
 * Mi lenguaje
 
-Los papelitos se han recortado de este [documento](lenguajes_de_programacion.pdf).
+AWK
 
 ## Información sobre el lenguaje
 
-Busca páginas y/o manuales sobre el lenguaje de programación elegido. Escribe aquí las principales características: cuándo y para qué se creó, en qué ámbito se utiliza, cuáles son sus principales ventajas, etc. Pon aquí enlaces y capturas de pantalla.
-
+AWK es un lenguaje de programación diseñado para procesar datos basados en texto, ya sean ficheros o flujos de datos. El nombre de AWK deriva de las iniciales de los apellidos de sus autores : Alfred Aho, Peter Weinberger y Brian Kernighan.
+Es un ejemplo de un lenguaje de programación que usa ampliamente el tipo de datos de listas asociativas y expresiones regulares. Fue una de las primeras herramientas en aparecer en Unix y ganó popularidad como una manera de añadir funcionalidad a las tuberías de UNIX, aunque se puede instalar implementaciones de AWK en casi todos los demás sistemas operativos.
+Se creó en 1977 y se actualizó hasta el año 1985. Que cada una de estas actualizaciones crearon dos dialectos el old awk y el awk nawk.Este lenguaje de programación es dinámico, su código es bastante corto, normalmente este lenguaje se usa para escribir programas de una linea (sencillos).
+Para editar el código de AWK necesitamos una herramienta simple y básica de UNIX que se llama VI.
+Ciertamente, puede no ser tan potente como numerosas herramientas que se pueden usar con la misma finalidad. Pero tiene la enorme ventaja de que, en un tiempo realmente corto, permite escribir programas que, aunque tal vez sean de un solo uso, están totalmente adaptados a nuestras necesidades, que en muchas ocasiones son sumamente sencillas.
+Awk es ideal para los propósitos con los que se diseño: leer ficheros línea por línea y procesar en base a los patterns y cadenas que encuentre en ellas.
+Ficheros del sistema como el /etc/password y muchos otros, resultan sumamente fáciles de tratar mediante el awk, sin recurrir a nada más.
+Y desde luego que awk no es el mejor. Hay varios lenguajes de scripting con capacidades mucho mayores. Pero awk sigue teniendo la ventaja de ser siempre accesible en cualquier instalación, por mínima que esta sea.
 ## Herramientas de desarrollo
 
-Indica aquí qué software has tenido que instalar para programar en este lenguaje. Añade enlaces y/o capturas de pantalla.
+Para usar este lenguaje de programación nesitas el editor de texto VI, Sublime, NANO.
 
 ## Poniendo en práctica el lenguaje
 
@@ -56,19 +62,197 @@ Pon en práctica el lenguaje de programación realizando los siguientes ejercici
 
 ### 1. ¡Hola mundo!
 
-Realiza un programa que muestre por pantalla la frase **¡Hola mundo!**.
+```awk
+BEGIN { print "Hola mundo!"; exit }
+```
 
 ### 2. Pirámide
 
 Dada una altura introducida por el usuario, realiza un programa que pinte una pirámide a base de asteriscos con la altura indicada.
+```awk
+#!/usr/bin/awk -f
+# Practicando AWK
+BEGIN {
+	print "La piramide se construira con distintas piedras dependiendo de su altura(<10='*' ;11-20='🂠'; >21='🀱')"
+	print "Introduce la altura de la piramide: "
+}
+{
+	ORS=" "
+	altura=$0 
+	base=1
+	espacios=(altura -1)
+	cielo = (altura/10)
+	if ( cielo <= 1){simbolo_piramide="*"}
+	else if(cielo <=2 ){ simbolo_piramide="🂠"}
+	else{simbolo_piramide="🀱"}
+}
+{
+	#Dibujo de Fondo
+	c_fondo="\033[1;44;30m"
+	c_piramide="\033[1;43;33m"
+	c_tierra="\033[0;43;33m"
+	c_blanco="\033[1;44;37m"	
+
+	print c_fondo
+	print c_blanco"☁☁☁☁" 
+	print c_fondo"   "
+	print c_blanco"--✈" 
+	print c_fondo"    " 
+	print c_blanco"☁☁☁☁☁" 
+	print c_fondo"      "
+	print "\033[1;44;33m☀" 
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_fondo"    "
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"    \n"
+
+	print c_blanco"☁☁☁☁☁☁"
+	print c_fondo"     "
+	print c_blanco"☁☁☁☁"
+	print c_fondo"  "
+	print c_blanco"☁☁☁" 
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_blanco"♈" 
+		print c_fondo"    " 
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"          \n"
+
+	print c_blanco"☁☁☁☁"
+	print c_fondo"     " 
+	print c_blanco"♈" 
+	print c_fondo"    " 
+	print c_blanco"☁☁☁☁" 
+	print c_fondo"   "
+	print c_blanco"☁☁"
+	print c_fondo"  "
+	print c_blanco"☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁"
+	print c_fondo"    "
+	print c_blanco"♈"
+	print c_fondo"          "
+	print c_blanco"☁☁☁☁☁☁☁☁☁"
+	}
+	print c_fondo"  \n"
+
+	print c_blanco"☁☁"
+	print c_fondo"    "
+	print c_blanco"♈"
+	print c_fondo"          "
+	print c_blanco"☁☁☁☁☁☁☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print c_blanco"☁☁☁☁"
+		print c_fondo"     " 
+		print c_blanco"♈" 
+		print c_fondo"    " 
+		print c_blanco"☁☁☁☁" 
+		print c_fondo"   "
+		print c_blanco"☁☁"
+		print c_fondo"  "
+		print c_blanco"☁☁☁"
+	}
+	print c_fondo"    \n"
+
+	print "        "
+	print c_blanco"♈"
+	print c_fondo"           "
+	print c_blanco"☁☁☁☁☁"
+	for(i = 0; i < cielo; i++){
+		print "        "
+		print c_blanco"♈"
+		print c_fondo"           "
+		print c_blanco"☁☁☁☁☁"
+	}
+	print c_fondo"     \n"
+}
+{
+	#Piramide
+	for (i = 0; i < altura; i++){
+		for (u = 0; u <= espacios; u++){
+		print c_fondo" "
+		}
+		for (relleno = 1; relleno <= base; relleno++){
+		print c_piramide simbolo_piramide
+		}
+		print c_fondo"\n"
+		base+=2
+		espacios-=1
+	}
+	exit
+}
+```
+![](Piramide1.png)
+![](Piramide2.png)
+![](Piramide3.png)
+
 
 ### 3. Arrays y números aleatorios
 
 Realiza un programa que rellene un array (o una estructura similar) con 20 números enteros aleatorios entre 1 y 100 y que seguidamente los muestre por pantalla. A continuación, se deben pasar los números primos a las primeras posiciones del array y los no primos a las posiciones restantes. Muestra finalmente el array resultado.
+```awk
+BEGIN{
+	ORS = " "
+	array_original[20]
+	array_primos[20]
+	array_noprimos[20]
+	contador_primos = 1
+	contador_noprimos = 1
+	primo = 0
+	c_piramide="\033[1;43;37m"
+	c_blanco="\033[1;44;37m"
+	c_color="\033[1;40;37m"
+
+	print "Array Original:   "
+	for(i = 1; i < 20; i++){
+		array_original[i] = int(rand() * 100 + 1)
+		printf c_color"%4d",array_original[i]
+		for(u = 2; u < array_original[i]; u++){
+			if((array_original[i] % u) == 0){
+				primo = 1
+			}
+		}
+		if(primo == 0){
+			array_primos[contador_primos] = array_original[i]
+			contador_primos++
+		}
+		if(primo == 1){
+			array_noprimos[contador_noprimos] = array_original[i]
+			contador_noprimos++
+		}
+	primo = 0
+	}
+	print "\033[0;30;37m \nArray Modificado: "
+	for(i = 1; i < contador_primos; i++){
+		printf c_piramide"%4d",array_primos[i]
+	}
+	for(i = 1; i < contador_noprimos; i++){
+		printf c_blanco"%4d",array_noprimos[i]
+	}
+print "\033[0;30;37m \n"
+exit
+}
+```
+![](Array1.png)
+![](Array2.png)
 
 ## Presentación de resultados
 
-Cada equipo explicará al resto de la clase lo aprendido durante la realización del ejercicio. Todos los miembros de cada equipo deben participar en la explicación. Se puede utilizar como material de base para la presentación el repositorio de GitHub.
+En este trabajo hemos aprendido los conceptos básicos de la programación con AWK que es un lenguaje muy antiguo el cual se usa para el tratado de texto (filtro de texto), Haciendo una comparación con java vemos que hay alguna similitud en la estructura pero solo con el dialecto más reciente.
+El tutorial que hemos seguido para aprender un concepto básico de AWK ha sido mediante videos de youtube y de una pagina que viene con muchos ejemplos y gran temario cuya dirección es: ftp://ftp.gnu.org/old-gnu/Manuals/gawk-3.0.3/html_chapter/gawk_toc.html
 
 ## Recompensa
 
