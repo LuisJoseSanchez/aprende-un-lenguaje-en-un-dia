@@ -244,7 +244,9 @@ print "\033[0;30;37m \n"
 exit
 }
 ```
-	
+![](../Ejercicios-programacion/Piramide1.png)
+![](../Ejercicios-programacion/Piramide2.png)
+![](../Ejercicios-programacion/Piramide3.png)
 
 ## Presentación de resultados
 
