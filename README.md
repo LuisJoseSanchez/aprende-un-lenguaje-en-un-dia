@@ -195,8 +195,8 @@ BEGIN {
 	exit
 }
 ```
-![](/Ejercicios-programacion/Array1.png)
-![](/Ejercicios-programacion/Array2.png)
+![](../Ejercicios-programacion/Array1.png)
+![](../Ejercicios-programacion/Array2.png)
 
 ### 3. Arrays y números aleatorios
 
